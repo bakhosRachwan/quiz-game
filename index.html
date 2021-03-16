@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="questions-page">
+        <h2>waaa</h2>
+        <h1 class="question"></h1>
+        <div class="answers">
+           
+        </div>
+        <button class="next off">NEXT</button>
+    </div>
+
+    <div class="setup on">
+        <div class="container">
+            <h1 class="title">TRIVIA Night</h1>
+            <div class="box">
+                <form class="form-setup">
+                    <h2>Build you Game</h2>
+                    <input type="number" name="number" min="0" max="50" class="question-nb" placeholder="Select number from 1 to 50" required>
+                    <select name="catagory" id="cat" required>
+                        <option style='display:none'disabled selected>Any Catagory</option>
+                        <option value="11">Flim</option>
+                        <option value="12">Music</option>
+                        <option value="18">Computers</option>
+                        <option value="21">Sports</option>
+                        <option value="28">Cars</option>
+                    </select>
+                    <select name="difficulty" id="diff" required>
+                        <option style='display:none'disabled selected>Any Difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <select name="type" id="type" required>
+                        <option style='display:none'disabled selected>Any Type</option>
+                        <option value="multiple">Multiple Choice</option>
+                        <option value="boolean">True/False</option>
+                    </select>
+                    <button type="submit" class="start">START</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="score off">
+        <h1>GAME OVER</h1>
+        <h2 class="score-val">Your Score:</h2>
+        <button class="restart">Start Over</button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
