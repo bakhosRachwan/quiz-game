@@ -1,7 +1,11 @@
-//setup
-
 const form = document.querySelector(".form-setup")
 const setup = document.querySelector(".setup")
+const questions = document.querySelector(".questions-page")
+const question = document.querySelector(".question")
+const answers = document.querySelector(".answers")
+const next = document.querySelector(".next")
+const score = document.querySelector(".score")
+const restart = document.querySelector(".restart");
 
 let questionArray = [];
 let answerArray = [];
@@ -18,24 +22,14 @@ const fetching = () => {
 }
 
 //questions
-const questions = document.querySelector(".questions-page")
-const question = document.querySelector(".question")
-const answers = document.querySelector(".answers")
-const next = document.querySelector(".next")
-const score = document.querySelector(".score")
 const render = () => {
-    console.log(i)
-    // i<parseInt(amount)? null: score.classList.add("on") 
     if(i< parseInt(amount)){
-        
-        console.log("if")
         let q = questionArray[i].question
         question.innerHTML = q
         let correct = questionArray[i].correct_answer
         let incorrect = questionArray[i].incorrect_answers
         answerArray.push(correct)
         answerArray.push(...incorrect)
-        console.log(answerArray)
         const random = answerArray.sort(() => Math.random() - 0.5)
         
         for(let x =0; x<answerArray.length; x++ ){
@@ -57,7 +51,6 @@ const render = () => {
     i<10? i++: null
     }
     else{
-        console.log("else")
         document.querySelector(".score-val").innerHTML+= finalScore
         score.classList.remove("off")
         score.classList.add("on") 
@@ -65,11 +58,6 @@ const render = () => {
         questions.classList.add("off") 
     }
 }
-// fetching()
-// setTimeout(() => {
-//     console.log(questionArray)
-//     render()
-// }, 1000)
 
 //next button
 next.addEventListener("click", function(){
@@ -96,21 +84,18 @@ form.addEventListener("submit", function(e){
     amount = val.number
     URLs = `https://opentdb.com/api.php?amount=${val.number}&category=${val.catagory}&difficulty=${val.difficulty}&type=${val.type}`
     fetching()
-    console.log(questionArray)
-    // console.log(amount)
-
+    
     setTimeout(()=>{
         setup.classList.remove("on")
         setup.classList.add("off")
         questions.classList.remove("off")
         questions.classList.add("on")
         render()
-    }, 2000)
+    }, 1000)
    
 })
 
-//restart
-const restart = document.querySelector(".restart");
+//restart button
 
 restart.addEventListener("click", () => {
     questionArray = [];
