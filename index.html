@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <img src="/Path 1.svg" alt="a" class="backImage">
     <div class="questions-page off">
-        <h2>waaa</h2>
-        <h1 class="question"></h1>
-        <div class="answers">
-           
+        <div class="questions-cont">
+            <h1 class="question"></h1>
+            <div class="answers">
+            
+            </div>
+            <button class="next off">NEXT</button>
         </div>
-        <button class="next off">NEXT</button>
     </div>
 
     <div class="setup on">
@@ -50,9 +52,11 @@
     </div>
     
     <div class="score off">
-        <h1>GAME OVER</h1>
-        <h2>Your Score:<span class="score-val"></span></h2>
-        <button class="restart">Start Over</button>
+        <div class="score-container">
+            <h1>GAME OVER</h1>
+            <h2>Your Score:<span class="score-val"></span></h2>
+            <button class="restart">Start Over</button>
+        </div>
     </div>
 
     <script src="./script.js"></script>
