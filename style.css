@@ -78,7 +78,7 @@ input::-webkit-inner-spin-button {
 
 /* question page */
 
-.button0, .button1, .button2, .button3, .restart{
+.button, .restart{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,10 +88,10 @@ input::-webkit-inner-spin-button {
     -webkit-box-shadow: 2px 14px 23px 3px rgba(0,0,0,0.25); 
     box-shadow: 2px 14px 23px 3px rgba(0,0,0,0.25);
 }
-.button0.active, .button1.active, .button2.active, .button3.active{
+.button.active{
     background-color : rgb(12, 206, 12);
 }
-.button0.inactive, .button1.inactive, .button2.inactive, .button3.inactive{
+.button.inactive{
     background-color : red;
 }
 .next{
@@ -131,4 +131,39 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.backImage{
+    animation: morph 10s  ease-in-out infinite;
+    transition: all 1s ease-in-out infinite;
+
+}
+
+@keyframes morph {
+    0% {
+        border-radius:  60% 0% 10% 70% / 60% 0% 20% 20%;
+    } 
+
+    50% {
+        border-radius:  30% 0% 20% 90% / 50% 0% 10% 40%;
+    }
+
+    100% {
+        border-radius:  60% 0% 20% 10% / 60% 0% 30% 80%;
+    }
+/* } 
+    0%
+    {
+        transform: scaleX(95%);
+    }
+    10%{
+        transform: scaleX(90%);
+    }
+    20%{
+        transform: scaleY(98%);
+    }
+    30%{
+        transform: scaleX(93%);
+    }
+     */
 }
